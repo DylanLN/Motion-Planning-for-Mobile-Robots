@@ -233,7 +233,7 @@ inline void AstarPathFinder::AstarGetSucc(GridNodePtr currentPtr, vector<GridNod
 //该函数主要求 f = g + h 中的 h (从该点移动到终点的估算成本)
 double AstarPathFinder::getHeu(GridNodePtr node1, GridNodePtr node2)
 {
-    /* 
+    /*
     选择您想要的可能的启发式函数
      曼哈顿，欧几里得，对角或0（Dijkstra）
      还记得在讲座中学习到的tie_breaker，在这里添加吗？
