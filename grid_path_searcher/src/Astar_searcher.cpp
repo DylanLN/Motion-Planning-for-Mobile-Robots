@@ -281,7 +281,6 @@ double AstarPathFinder::getHeu(GridNodePtr node1, GridNodePtr node2)
     {
         h = h * (1 + 1/25);
     }
-    
     return h;
 }
 

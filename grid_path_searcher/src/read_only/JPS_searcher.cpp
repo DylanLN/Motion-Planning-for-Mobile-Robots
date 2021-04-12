@@ -3,12 +3,17 @@
 using namespace std;
 using namespace Eigen;
 
+//获得继承
 inline void JPSPathFinder::JPSGetSucc(GridNodePtr currentPtr, vector<GridNodePtr> & neighborPtrSets, vector<double> & edgeCostSets)
 {
+    //先将两个清空
     neighborPtrSets.clear();
     edgeCostSets.clear();
+
+    //获得方向的绝对值
     const int norm1 = abs(currentPtr->dir(0)) + abs(currentPtr->dir(1)) + abs(currentPtr->dir(2));
 
+    //
     int num_neib  = jn3d->nsz[norm1][0];
     int num_fneib = jn3d->nsz[norm1][1];
     int id = (currentPtr->dir(0) + 1) + 3 * (currentPtr->dir(1) + 1) + 9 * (currentPtr->dir(2) + 1);
@@ -149,7 +154,7 @@ inline bool JPSPathFinder::isFree(const int & idx_x, const int & idx_y, const in
     return (idx_x >= 0 && idx_x < GLX_SIZE && idx_y >= 0 && idx_y < GLY_SIZE && idx_z >= 0 && idx_z < GLZ_SIZE && 
            (data[idx_x * GLYZ_SIZE + idx_y * GLZ_SIZE + idx_z] < 1));
 }
-
+//jps主要的函数
 void JPSPathFinder::JPSGraphSearch(Eigen::Vector3d start_pt, Eigen::Vector3d end_pt)
 {
     ros::Time time_1 = ros::Time::now();    
