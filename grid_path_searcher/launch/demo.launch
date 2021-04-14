@@ -2,7 +2,7 @@
 
 <arg name="map_size_x" default="10.0"/>
 <arg name="map_size_y" default="10.0"/>
-<arg name="map_size_z" default=" 5.0"/>
+<arg name="map_size_z" default=" 2.0"/>
 
 <arg name="start_x" default=" 0.0"/>
 <arg name="start_y" default=" 0.0"/>
@@ -51,7 +51,5 @@
       <remap from="~goal" to="/goal"/>
       <param name="waypoint_type" value="manual-lonely-waypoint"/>    
   </node>
-
-  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find grid_path_searcher)/launch/rviz_config/demo.rviz"/> 
-
+  /home/luan/Nutstore/Motion Planning for Mobile Robot/hw_2/ros版本作业/src/grid_path_searcher/launch/demo.launch
 </launch>
